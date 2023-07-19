@@ -1,0 +1,14 @@
+class Solution {
+public:
+    int numIdenticalPairs(vector<int>&a) 
+    {
+        int res=0;
+        map<int,int>m;
+        for(auto i:a)
+        {
+m[i]++;
+res=res+m[i]-1;
+        }
+       return res; 
+    }
+};
