@@ -1,0 +1,24 @@
+class Solution {
+public:
+    string interpret(string s) {
+        string s1="";
+        for(int i=0;i<s.size();){
+            if(s[i]=='G'){
+            s1+= 'G';
+            i++;
+        }
+                else if(s[i]=='(' && s[i+1] == ')'){
+            s1 += 'o';
+            i += 2;
+
+        }
+             else{
+            s1 += "al";
+            i+=4;
+        }
+                
+        }
+        return s1; 
+    }
+
+};

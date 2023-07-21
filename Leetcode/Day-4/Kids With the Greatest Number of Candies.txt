@@ -1,0 +1,21 @@
+class Solution {
+public:
+    vector<bool> kidsWithCandies(vector<int>&a, int ec) {
+        vector<bool>res;
+       int maxi=0;
+       int n=a.size();
+     for(int i=0;i<n;i++)
+     {
+ maxi=max(a[i],maxi);
+     }
+     for(int i=0;i<n;i++)
+     {
+int h=a[i]+ec;
+if(h>=maxi)
+res.push_back(true);
+else
+ res.push_back(false);
+     }
+        return res;
+    }
+};
