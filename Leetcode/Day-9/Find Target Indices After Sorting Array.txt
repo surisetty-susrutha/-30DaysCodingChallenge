@@ -1,0 +1,15 @@
+class Solution {
+public:
+    vector<int> targetIndices(vector<int>& a, int t)
+     {
+         vector<int>res;
+        sort(a.begin(),a.end());
+        int n=a.size();
+for(int i=0;i<n;i++){
+        if(a[i]==t)
+     res.push_back(i);
+
+    }
+    return res;
+    }
+};
