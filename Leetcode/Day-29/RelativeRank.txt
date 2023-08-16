@@ -1,0 +1,60 @@
+ class Solution {
+public:
+    vector<string> findRelativeRanks(vector<int>& score) {
+        int n = score.size();
+        int arr[n];
+        for(int i=0;i<n;i++){
+            arr[i]=score[i];
+        }
+        sort(arr, arr+n);
+        vector<string>v;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                if(arr[j]==score[i]){
+                    if(j+1 == n){
+                        v.push_back("Gold Medal");
+                    }
+                    else if(j+1 == n-1){
+                        v.push_back("Silver Medal");
+                    }
+                    else if(j+1 == n-2){
+                        v.push_back("Bronze Medal");
+                    }
+                    else{
+                        v.push_back(to_string(n+1 -(j+ 1)));
+                    }
+                }
+            }
+        }
+        return v;
+    }
+};
+[10:50 pm, 16/08/2023] Vidhyaaaa ❣️: class Solution {
+public:
+    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+        int i=m-1;
+        int j=n-1;
+        int k=m+n-1;
+        while(j>=0 && i>=0)
+        {
+            if(nums1[i]<=nums2[j])
+            {
+                nums1[k]=nums2[j];
+                k--;
+                j--;
+            }
+            else
+            {
+                swap(nums1[i],nums1[k]);
+                k--;
+                i--;
+            }
+        }
+        
+        while(j>=0)
+        {
+            nums1[k]=nums2[j];j--;k--;
+        }
+        
+    }
+};
